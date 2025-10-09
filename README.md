@@ -1,0 +1,1 @@
+pip install web3==6.* eth_abi
