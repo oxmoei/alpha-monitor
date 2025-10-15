@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bn-alpha"
+version = "0.1.0"
+description = "Aster and Binance alpha listing listeners"
+authors = ["star <star@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10 || ^3.11 || ^3.12"
+web3 = "^6.11"
+requests = ">=2.31,<3"
+PyYAML = "^6.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
