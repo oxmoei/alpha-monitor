@@ -114,7 +114,7 @@ Start-Process powershell -WindowStyle Hidden -ArgumentList "poetry run python bn
   - 从 `.env` 读取 `BN_ALPHA_URL`、`POLL_INTERVAL`、Telegram 配置
   - 发现新代币时打印并推送 Telegram（如配置）
 
-### 常见问题
+### ❓ 常见问题
 
 - 无法连接 RPC：
   - 检查 `.env` 中的 `RPC_WSS`/`RPC_HTTP` 是否可用
