@@ -39,7 +39,7 @@ RPC_HTTP=https://your-http-endpoint
 
 # Binance Alpha API 与轮询间隔（秒）
 BN_ALPHA_URL=https://www.binance.com/bapi/defi/v1/public/wallet-direct/buw/wallet/cex/alpha/all/token/list
-POLL_INTERVAL=0.15
+POLL_INTERVAL=1
 
 # Telegram 推送
 bot_token=123456:ABCDEF_your_bot_token
