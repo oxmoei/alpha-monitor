@@ -41,8 +41,8 @@ def build_filter(w3: Web3, contract, from_block: int | str = "latest", pricefeed
     # 使用 ABI 级过滤，避免自行编码 topic 地址错误
     if pricefeed:
         pf = Web3.to_checksum_address(pricefeed)
-        return contract.events.AddToken.create_filter(from_block=from_block, argument_filters={"priceFeed": pf})
-    return contract.events.AddToken.create_filter(from_block=from_block)
+        return contract.events.AddToken.create_filter(fromBlock=from_block, argument_filters={"priceFeed": pf})
+    return contract.events.AddToken.create_filter(fromBlock=from_block)
 
 def process_log(contract, log):
     # 用 ABI 解码（拿到 args）

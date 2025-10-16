@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "bn-alpha"
+name = "alpha-monitor"
 version = "0.1.0"
 description = "Aster and Binance alpha listing listeners"
-authors = ["star <star@example.com>"]
+authors = ["Oxmoei <https://t.me/cryptostar210>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
