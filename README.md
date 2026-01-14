@@ -67,6 +67,8 @@ poetry run python bn_listing_monitor.py
 nohup poetry run python bn_listing_monitor.py > monitor.log 2>&1 &
 ```
 
+---
+
 🔴 Windows 用户：
 
 ### 1. 克隆仓库/安装依赖（确保你已安装 `git`，如果未安装请参考➡️[安装git教程](./安装git教程.md)）
@@ -108,6 +110,8 @@ poetry run python bn_listing_monitor.py
 Start-Process powershell -WindowStyle Hidden -ArgumentList "poetry run python bn_listing_monitor.py"
 ```
 
+---
+
 ### ⚙️ 功能概述
 
 - `aster_listing_monitor.py`
@@ -120,6 +124,8 @@ Start-Process powershell -WindowStyle Hidden -ArgumentList "poetry run python bn
   - 轮询 Binance Alpha 新上架代币列表
   - 从 `.env` 读取 `BN_ALPHA_URL`、`POLL_INTERVAL`、Telegram 配置
   - 发现新代币时打印并推送 Telegram（如配置）
+
+---
 
 ### ❓ 常见问题
 - 如何配置 Telegram 推送？
