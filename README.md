@@ -7,6 +7,9 @@
     \_/ \_/_| .__/|_| |_|\__,_| \/    \/\___/|_| |_|_|\__\___/|_|   
             |_|          
 ```
+
+[English](README-EN.md) | 中文
+
 轻量级上新监听工具集：
 - 监听 Astar Treasury 合约的 AddToken 事件，并可推送到 Telegram
 - 监听 Binance Alpha 新上架代币列表，并可推送到 Telegram       ➡️[创建TelegramBot指南](./创建TelegramBot指南.md)
