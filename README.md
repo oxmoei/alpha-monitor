@@ -9,15 +9,31 @@
 ```
 轻量级上新监听工具集：
 - 监听 Astar Treasury 合约的 AddToken 事件，并可推送到 Telegram
-- 监听 Binance Alpha 新上架代币列表，并可推送到 Telegram
+- 监听 Binance Alpha 新上架代币列表，并可推送到 Telegram       ➡️[创建TelegramBot指南](./创建TelegramBot指南.md)
+
+---
+
+## 📚 目录
+- [🖥️ 支持平台](#️-支持平台)
+- [🚀 快速开始](#-快速开始)
+  - [Linux / WSL / macOS](#1-克隆仓库安装依赖确保你已安装-git如果未安装请参考安装git教程)
+  - [Windows](#1-克隆仓库安装依赖确保你已安装-git如果未安装请参考安装git教程-1)
+- [⚙️ 功能概述](#️-功能概述)
+- [❓ 常见问题](#-常见问题)
+
+---
 
 ## 🖥️ 支持平台
 
 - ![Windows](https://img.shields.io/badge/-Windows-0078D6?logo=windows&logoColor=white)
 - ![macOS](https://img.shields.io/badge/-macOS-000000?logo=apple&logoColor=white)
 - ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black)
+- ![WSL](https://img.shields.io/badge/-WSL-0078D6?logo=windows&logoColor=white) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️[如何在 Windows 上安装 WSL2 Ubuntu](https://medium.com/@cryptoguy_/在-windows-上安装-wsl2-和-ubuntu-a857dab92c3e)
 
-## 🔴 Linux/WSL/macOS 用户：
+---
+
+## 🚀 快速开始
+🔴 Linux /WSL /macOS 用户：
 
 ### 1. 克隆仓库/安装依赖（确保你已安装 `git`，如果未安装请参考➡️[安装git教程](./安装git教程.md)）
 
@@ -28,27 +44,13 @@ git clone https://github.com/oxmoei/alpha-monitor.git && cd alpha-monitor
 # 自动安装缺失的依赖和配置环境
 ./install.sh
 ```
+
 ### 2. 配置环境变量
 
-编辑 `.env` 文件：
-
-```env
-# Aster 监听 RPC（优先使用 WSS）
-RPC_WSS=wss://your-wss-endpoint
-RPC_HTTP=https://your-http-endpoint
-
-# Binance Alpha API 与轮询间隔（秒）
-BN_ALPHA_URL=https://www.binance.com/bapi/defi/v1/public/wallet-direct/buw/wallet/cex/alpha/all/token/list
-POLL_INTERVAL=1
-
-# Telegram 推送
-bot_token=123456:ABCDEF_your_bot_token
-chat_id=123456789
+```bash
+# 复制示例环境文件并编辑设置
+cp .env.example .env && nano .env # 编辑完成按 Ctrl+O 保存，Ctrl+X 退出
 ```
-说明：
-- `RPC_WSS` 存在时优先走 WSS；否则回落到 `RPC_HTTP`
-- `POLL_INTERVAL` 用于 `bn_listing_monitor.py` 的轮询间隔
-- 命令行参数优先级高于环境变量
 
 ### 3. 使用方法
 
@@ -65,7 +67,7 @@ poetry run python bn_listing_monitor.py
 nohup poetry run python bn_listing_monitor.py > monitor.log 2>&1 &
 ```
 
-## 🔴 Windows 用户：
+🔴 Windows 用户：
 
 ### 1. 克隆仓库/安装依赖（确保你已安装 `git`，如果未安装请参考➡️[安装git教程](./安装git教程.md)）
 
@@ -83,8 +85,13 @@ Set-ExecutionPolicy Bypass -Scope CurrentUser -Force; [System.Net.ServicePointMa
 ```
 
 ### 2. 配置环境变量
+```powershell
+# 复制示例环境文件
+Copy-Item .env.example .env
 
-同上
+# 编辑设置
+notepad .env  # 编辑完成保存、关闭
+```
 
 ### 3. 使用方法
 
@@ -115,7 +122,8 @@ Start-Process powershell -WindowStyle Hidden -ArgumentList "poetry run python bn
   - 发现新代币时打印并推送 Telegram（如配置）
 
 ### ❓ 常见问题
-
+- 如何配置 Telegram 推送？
+  - ➡️[创建TelegramBot指南](./创建TelegramBot指南.md)
 - 无法连接 RPC：
   - 检查 `.env` 中的 `RPC_WSS`/`RPC_HTTP` 是否可用
   - 可用 `--rpc-wss`/`--rpc-http` 参数覆盖
