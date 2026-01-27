@@ -44,7 +44,7 @@
 # 克隆仓库并进入项目目录
 git clone https://github.com/oxmoei/alpha-monitor.git && cd alpha-monitor
 
-# 自动安装缺失的依赖和配置环境
+# 自动识别所在系统来配置环境并安装缺失的依赖
 ./install.sh
 ```
 
